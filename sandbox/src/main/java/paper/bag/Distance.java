@@ -1,6 +1,6 @@
 package paper.bag;
 
-public class CheckDistance {
+public class Distance {
 
   public static void main(String[] args) {
     Point p1 = new Point();
