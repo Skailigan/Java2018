@@ -9,16 +9,19 @@ public class DistanceTests {
 
   public void testDistance() {
 
-    Point a = new Point();
-    a.x = 12;
-    a.y = 14;
+    Point a = new Point(0, 10);
+
 
     Point b = new Point();
-    b.x = 12;
-    b.y = 14;
 
-    Assert.assertEquals((a.distance(b)), 0.0);
-    Assert.assertEquals((b.distance(a)), 0.0);
+
+    Point c = new Point(10);
+
+
+    Assert.assertEquals((a.distance(b)), 10.0);
+    Assert.assertEquals((c.distance(a)), 10.0);
+   
+
 
   }
 }
