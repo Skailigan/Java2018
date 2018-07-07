@@ -1,5 +1,6 @@
 package addressbook;
 
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -14,7 +15,7 @@ public class GroupCreationTests {
     
     @BeforeMethod
     public void setUp() throws Exception {
-        wd = new FirefoxDriver();
+      wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
         wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         gotoUrl("http://localhost/addressbook/index.php");
         login();
@@ -39,7 +40,7 @@ public class GroupCreationTests {
 
         gotoGroupPage();
         initGroupCreation();
-        fillGroupForm("testCroupName", "test1GroupHeader");
+        fillGroupForm(new GroupData("testCroupName", "test1GroupHeader", "test3GroupFooter"));
         submitGroupCreation();
     }
 
@@ -47,16 +48,16 @@ public class GroupCreationTests {
         wd.findElement(By.name("submit")).click();
     }
 
-    private void fillGroupForm(String groupName, String groupHeader) {
+    private void fillGroupForm(GroupData groupData) {
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
-        wd.findElement(By.name("group_name")).sendKeys(groupName);
+        wd.findElement(By.name("group_name")).sendKeys(groupData.getGroupName());
         wd.findElement(By.name("group_header")).click();
         wd.findElement(By.name("group_header")).clear();
-        wd.findElement(By.name("group_header")).sendKeys(groupHeader);
+        wd.findElement(By.name("group_header")).sendKeys(groupData.getGroupHeader());
         wd.findElement(By.name("group_footer")).click();
         wd.findElement(By.name("group_footer")).clear();
-        wd.findElement(By.name("group_footer")).sendKeys("test3GroupFooter");
+        wd.findElement(By.name("group_footer")).sendKeys(groupData.getGroupFooter());
     }
 
     private void initGroupCreation() {
