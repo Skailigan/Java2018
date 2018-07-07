@@ -18,7 +18,24 @@ public class Point {
   }
 
   public double distance(Point p) {
-    return Math.sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y));
+
+    return (Math.sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y)));
+  }
+
+
+
+  double testDistance(Point p) {
+    return Sqrt((x - p.x) * (x - p.x) + (y - p.y) * (y - p.y));
+  }
+
+  protected double Sqrt(int base){
+    double temp;
+    double squareRoot = base / 2;
+    do {
+      temp = squareRoot;
+      squareRoot = (temp + (base / temp)) / 2;
+    } while ((temp - squareRoot) != 0);
+    return squareRoot;
   }
 
 }

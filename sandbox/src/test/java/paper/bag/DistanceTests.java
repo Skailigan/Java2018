@@ -6,22 +6,27 @@ import org.testng.annotations.Test;
 public class DistanceTests {
 
   @Test
+  private void testDistanceInputXY() {
 
-  public void testDistance() {
+    Point a = new Point(2, 7);
+    Point a1 = new Point(5, 3);
+    Assert.assertEquals((a.distance(a1)), 5.0);
 
-    Point a = new Point(0, 10);
+    }
 
-
+  @Test
+  private void testDistanceInputZero(){
     Point b = new Point();
+    Point b1 = new Point();
+    Assert.assertEquals((b.distance(b1)),0.0);
 
-
-    Point c = new Point(10);
-
-
-    Assert.assertEquals((a.distance(b)), 10.0);
-    Assert.assertEquals((c.distance(a)), 10.0);
-   
-
+  }
+  @Test
+  private void testDistanceInputX(){
+    Point c = new Point(1);
+    Point c1 = new Point(10);
+    Assert.assertEquals((c.distance(c1)),12.727922061357855);
+ 
 
   }
 }

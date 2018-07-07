@@ -1,16 +1,21 @@
 package paper.bag;
+import java.util.Scanner;
 
 public class Distance {
 
   public static void main(String[] args) {
-    Point p1 = new Point();
-    Point p2 = new Point();
-    p1.x = 9999999;
-    p1.y = 14;
-    p2.x = -14;
-    p2.y = -99999;
+
+    Point p1 = new Point(1);
+    Point p2 = new Point(12);
+    Point p3 = new Point(3,11);
+    Point p4 = new Point(11,3);
+    Point p5 = new Point(99999,0);
+    Point p6 = new Point(0,0);
     double distance = p1.distance(p2);
-    System.out.println(distance);
+    System.out.println("Дистанция между точками А(" + p1.x + "," + p1.y + ") и точкой В(" + p2.x + "," + p2.y+") на плоскости равна "+(p1.distance(p2)));
+    System.out.println("Дистанция между точками А1(" + p3.x + "," + p3.y + ") и точкой В1(" + p4.x + "," + p4.y+") на плоскости равна " + p3.distance(p4));
+    System.out.println("Дистанция между точками А2(" + p5.x + "," + p5.y + ") и точкой В2(" + p6.x + "," + p6.y+") на плоскости равна " + p5.distance(p6));
+
   }
   
 }
