@@ -1,5 +1,7 @@
-package addressbook;
+package addressbook.appmanager;
 
+import addressbook.dataobjects.ContactData;
+import addressbook.dataobjects.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,7 +24,7 @@ public class ApplicationManager {
   public void init() {
     wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true));
     wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-    gotoUrl("http://localhost/addrgessbook/index.php");
+    gotoUrl("http://localhost/addressbook/index.php");
     login("admin", "secret");
   }
 

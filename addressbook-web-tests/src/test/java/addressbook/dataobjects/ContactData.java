@@ -1,4 +1,4 @@
-package addressbook;
+package addressbook.dataobjects;
 
 public class ContactData {
   private final String contactfirstName;

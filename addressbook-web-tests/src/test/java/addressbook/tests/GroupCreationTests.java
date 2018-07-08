@@ -1,4 +1,5 @@
-package addressbook;
+package addressbook.tests;
+import addressbook.dataobjects.GroupData;
 import org.testng.annotations.Test;
 
 
