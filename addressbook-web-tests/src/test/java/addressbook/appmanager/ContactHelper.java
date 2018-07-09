@@ -30,8 +30,29 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
-  public void selectContact() {
-    click(By.name("selected[]"));
+  private By getTableRow(String rowNumber) {
+    return By.cssSelector("#maintable > tbody > tr:nth-child" + rowNumber + ")");
+  }
+
+  private By clickOnRowItem(String rowNumber, String rowColumn) {
+    By contact = getTableRow(rowNumber);
+    click(contact.cssSelector("td:nth-child(" + rowColumn + ")"));
+    return contact;
+  }
+  public By initContactModification() {
+    return clickOnRowItem("2", "8");
+  }
+
+  public By initContactModification(String rowNumber) {
+    return clickOnRowItem(rowNumber, "8");
+  }
+
+  public By selectContact(String rowNumber) {
+    return clickOnRowItem(rowNumber, "1");
+  }
+
+  public By selectContact() {
+    return clickOnRowItem("2", "1");
   }
 
   public void closeDelAlert() {
@@ -41,5 +62,9 @@ public class ContactHelper extends HelperBase {
   public void deleteContact() {
     click(By.xpath("//input[@value='Delete']"));
 
+  }
+
+  public void updateContact() {
+    click(By.name("update"));
   }
 }

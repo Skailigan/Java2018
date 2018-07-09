@@ -15,12 +15,12 @@ public class ApplicationManager {
   private GroupHelper groupHelper;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
-      try {
-          wd.switchTo().alert();
-          return true;
-      } catch (NoAlertPresentException e) {
-          return false;
-      }
+    try {
+      wd.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
   }
 
   public void init() {
@@ -31,7 +31,7 @@ public class ApplicationManager {
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     contactHelper = new ContactHelper(wd);
-    sessionHelper.login("admin","secret");
+    sessionHelper.login("admin", "secret");
   }
 
   public void stop() {
