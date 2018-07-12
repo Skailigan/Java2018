@@ -1,6 +1,8 @@
 package addressbook.appmanager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
@@ -25,5 +27,13 @@ public class HelperBase {
 
     }
 
+  }
+  public static boolean isAlertPresent(WebDriver wd) {
+    try {
+     wd.switchTo().alert();
+      return true;
+    } catch (NoAlertPresentException e) {
+      return false;
+    }
   }
 }

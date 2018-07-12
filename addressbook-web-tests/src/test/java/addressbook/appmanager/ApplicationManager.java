@@ -24,14 +24,7 @@ public class ApplicationManager {
    
   }
 
-  public static boolean isAlertPresent(WebDriver wd) {
-    try {
-      wd.switchTo().alert();
-      return true;
-    } catch (NoAlertPresentException e) {
-      return false;
-    }
-  }
+
 
   public void init() {
       switch (browser) {
