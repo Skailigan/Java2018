@@ -10,20 +10,15 @@ public class GroupCreationTests extends TestBase {
   public void testGroupCreation() {
 
     app.getNavigationHelper().gotoGroupPage();
-    app.getGroupHelper().initGroupCreation();
-    app.getGroupHelper().fillGroupForm(new GroupData("testCroupName", "test1GroupHeader", "test3GroupFooter"));
-    app.getGroupHelper().submitGroupCreation();
-    app.getNavigationHelper().gotoGroupPage();
+    app.getGroupHelper().createGroup(new GroupData("testCroupName", "test1GroupHeader", "test3GroupFooter"));
   }
 
   @Test
   public void testGroupCreationPartialNull() {
 
     app.getNavigationHelper().gotoGroupPage();
-    app.getGroupHelper().initGroupCreation();
-    app.getGroupHelper().fillGroupForm(new GroupData("testCroupName", null, null));
-    app.getGroupHelper().submitGroupCreation();
-    app.getNavigationHelper().gotoGroupPage();
+    app.getGroupHelper().createGroup(new GroupData("testCroupName", null, null));
+
   }
 
 }

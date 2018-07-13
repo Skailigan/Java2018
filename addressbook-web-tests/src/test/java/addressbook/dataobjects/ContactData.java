@@ -10,6 +10,8 @@ public class ContactData {
   private final String birthMonthNumber;
   private final String birthYear;
   private String group;
+  private String groupName;
+  private String contactsName;
 
   public ContactData(String contactfirstName, String contactLastName, String contactMainAddress, String contactHomePhoneNumber, String contactEmail, String birthDayNumber, String birthMonthNumber, String birthYear, String group) {
     this.contactfirstName = contactfirstName;
@@ -22,6 +24,7 @@ public class ContactData {
     this.birthYear = birthYear;
     this.group = group;
   }
+
 
   public String getContactfirstName() {
     return contactfirstName;

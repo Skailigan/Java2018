@@ -40,7 +40,7 @@ public class ContactHelper extends HelperBase {
   }
 
   private By getTableRow(String rowNumber) {
-    return By.cssSelector("#maintable > tbody > tr:nth-child" + rowNumber + ")");
+    return By.cssSelector("#maintable > tbody > tr:nth-child(" + rowNumber + ")");
   }
 
   private By clickOnRowItem(String rowNumber, String rowColumn) {
@@ -79,4 +79,16 @@ public class ContactHelper extends HelperBase {
   }
 
 
+  public void createContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact, true);
+    submitContactCreation();
+
+
+  }
+
+  public boolean isThereAContact() {
+    // return isElementPresent(By.partialLinkText("edit.php?id="));
+    return isElementPresent(By.cssSelector("a[href^=edit]"));
+  }
 }
