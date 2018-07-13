@@ -17,7 +17,9 @@ public class ContactModificationTests extends TestBase {
             "changed@eail.test",
             "1",
             "1",
-            "2001"));
+            "2001",
+            null),
+            false);
     app.getContactHelper().updateContact();
 
   }
