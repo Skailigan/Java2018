@@ -19,7 +19,7 @@ public class ContactDeletionTests extends TestBase {
                       "10",
                       "7",
                       "1980",
-                      "testCroupName"));
+                      "[none]"));
     }
     app.getContactHelper().selectContact();
     app.getContactHelper().deleteContact();

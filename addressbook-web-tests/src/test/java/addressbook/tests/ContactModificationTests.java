@@ -18,7 +18,7 @@ public class ContactModificationTests extends TestBase {
                       "10",
                       "7",
                       "1980",
-                      "testCroupName"));
+                      "[none]"));
     }
     app.getContactHelper().initContactModification();
     app.getContactHelper().fillContactForm(new ContactData(

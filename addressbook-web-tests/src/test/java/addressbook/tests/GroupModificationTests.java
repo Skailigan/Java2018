@@ -1,6 +1,7 @@
 package addressbook.tests;
 
 import addressbook.dataobjects.GroupData;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class GroupModificationTests extends TestBase {
@@ -10,10 +11,14 @@ public class GroupModificationTests extends TestBase {
     if (!app.getGroupHelper().isThereAGroup()) {
       app.getGroupHelper().createGroup(new GroupData("test1", null, null));
     }
+    int before = app.getGroupHelper().getGroupCount();
     app.getGroupHelper().selectGroup();
     app.getGroupHelper().initGroupModification();
     app.getGroupHelper().fillGroupForm(new GroupData("changedName", "changedHeader", "changedFooter"));
     app.getGroupHelper().submitGroupModification();
+    app.getNavigationHelper().gotoGroupPage();
+    int after = app.getGroupHelper().getGroupCount();
+    Assert.assertEquals(after,before );
 
   }
 
