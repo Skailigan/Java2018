@@ -47,13 +47,9 @@ public class ApplicationManager {
     wd.quit();
   }
 
-  public void deleteSelectedCroups() {
-    wd.findElement(By.name("delete")).click();
-  }
 
-  public void selectGroup() {
-    wd.findElement(By.name("selected[]")).click();
-  }
+
+
 
   public GroupHelper getGroupHelper() {
     return groupHelper;
