@@ -4,28 +4,31 @@ public class GroupData {
   private final String groupName;
   private final String groupHeader;
   private final String groupFooter;
-  private final String id;
+  private int id;
 
-  public GroupData(String id,String groupName, String groupHeader, String groupFooter) {
+  public GroupData(int id,String groupName, String groupHeader, String groupFooter) {
     this.id = id;
     this.groupName = groupName;
     this.groupHeader = groupHeader;
     this.groupFooter = groupFooter;
   }
   public GroupData(String groupName, String groupHeader, String groupFooter) {
-    this.id = null;
+    this.id = 0;
     this.groupName = groupName;
     this.groupHeader = groupHeader;
     this.groupFooter = groupFooter;
   }
 
 
+  public void setId(int id) {
+    this.id = id;
+  }
 
   public String getGroupName() {
     return groupName;
   }
 
-  public String getId() {
+  public int getId() {
     return id;
   }
 
@@ -34,7 +37,7 @@ public class GroupData {
   public String toString() {
     return "GroupData{" +
             "groupName='" + groupName + '\'' +
-            ", id='" + id + '\'' +
+            ", id=" + id +
             '}';
   }
 
@@ -45,14 +48,14 @@ public class GroupData {
 
     GroupData groupData = (GroupData) o;
 
-    if (groupName != null ? !groupName.equals(groupData.groupName) : groupData.groupName != null) return false;
-    return id != null ? id.equals(groupData.id) : groupData.id == null;
+    if (id != groupData.id) return false;
+    return groupName != null ? groupName.equals(groupData.groupName) : groupData.groupName == null;
   }
 
   @Override
   public int hashCode() {
     int result = groupName != null ? groupName.hashCode() : 0;
-    result = 31 * result + (id != null ? id.hashCode() : 0);
+    result = 31 * result + id;
     return result;
   }
 
